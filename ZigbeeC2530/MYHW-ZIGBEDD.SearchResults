@@ -1,0 +1,32 @@
+---- NLME_GetShortAddr Matches (31 in 16 files) ----
+AF.c (components\stack\af):    if ( (dstAddr->addr.shortAddr != NLME_GetShortAddr())
+AF.c (components\stack\af):       (req.dstAddr.addr.shortAddr == NLME_GetShortAddr()) )
+GenericApp.c (projects\zstack\samples\genericapp\source):      ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(), 
+MT_UTIL.c (components\mt):      uint16 shortAddr = NLME_GetShortAddr();
+MT_X.c (projects\zstack\utilities\oad\source):    if (addr != NLME_GetShortAddr())
+NLMEDE.h (components\stack\nwk):extern uint16 NLME_GetShortAddr( void );
+SerialApp.c (projects\zstack\utilities\serialapp\source):      ZDP_EndDeviceBindReq( &txAddr, NLME_GetShortAddr(), 
+SimpleController.c (projects\zstack\samples\simpleapp\source):  uint16 addr = NLME_GetShortAddr();
+SimpleCoordinator.c (projects\zstack\samples\simpleapp\source):  uint16 addr = NLME_GetShortAddr();//获取本身短地址
+TransmitApp.c (projects\zstack\utilities\transmit\source):      ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+Zcl_samplelight.c (projects\zstack\homeautomation\samplelight\source):    ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+Zcl_samplesw.c (projects\zstack\homeautomation\sampleswitch\source):    ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+Zcl_sampleswota.c (projects\zstack\homeautomation\sampleswitchota\source):    ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+ZDApp.c (components\stack\zdo):      ZDAppNwkAddr.addr.shortAddr = NLME_GetShortAddr();
+ZDApp.c (components\stack\zdo):      if ( (NLME_GetShortAddr() != INVALID_NODE_ADDR) ||
+ZDApp.c (components\stack\zdo):  ZDP_DeviceAnnce( NLME_GetShortAddr(), NLME_GetExtAddr(),
+ZDObject.c (components\stack\zdo):  ZDAppNwkAddr.addr.shortAddr = NLME_GetShortAddr();
+ZDObject.c (components\stack\zdo):  if ( aoi == NLME_GetShortAddr() )
+ZDObject.c (components\stack\zdo):    if ( osal_ExtAddrEqual( NLME_GetExtAddr(), Annce.extAddr ) && Annce.nwkAddr == NLME_GetShortAddr() )
+ZDObject.c (components\stack\zdo):    if ( inMsg->macDestAddr != NLME_GetShortAddr() )
+ZDObject.c (components\stack\zdo):    if ( Annce.nwkAddr != NLME_GetShortAddr() )
+ZDProfile.c (components\stack\zdo):  if ( LocalCoordinator != NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):  if ( device->parentAddr == NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):  if ( device->parentAddr != NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):    if ( device->parentAddr == NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):    if ( device->parentAddr != NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):      if ( device->parentAddr == NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):  if ( device->parentAddr == NLME_GetShortAddr() )
+ZDSecMgr.c (components\stack\zdo):    device.parentAddr = NLME_GetShortAddr();
+ZDSecMgr.c (components\stack\zdo):      device.parentAddr = NLME_GetShortAddr();
+ZDSecMgr.c (components\stack\zdo):  if ( NLME_GetShortAddr() != TCshortAddr )

@@ -1,0 +1,46 @@
+[DebugChecksum]
+Checksum=-1994164020
+[DisAssemblyWindow]
+NumStates=_ 0
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "F:\Zigbee节点控制程序\Components\hal\target\CC2530EB\hal_key.c" ""
+A1=_ "F:\Zigbee节点控制程序\Components\mac\low_level\srf04\mac_backoff_timer.c" ""
+A2=_ "F:\Zigbee节点控制程序\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A3=_ "F:\Zigbee节点控制程序\Components\stack\sapi\sapi.c" ""
+A4=_ "F:\Zigbee节点控制程序\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A5=_ "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack 2.4.0-1.4.0\Components\mac\low_level\srf04\mac_backoff_timer.c" ""
+A6=_ "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A7=_ "H:\3gbox\zigbee\zigbee综合应用演示代码\cc2530 综合实验 z-stack 2.4.0-1.4.0\Components\mac\low_level\srf04\mac_backoff_timer.c" ""
+A8=_ "H:\3gbox\zigbee\zigbee综合应用演示代码\cc2530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A9=_ "H:\3gbox\zigbee\zigbee综合应用演示代码\复件 cc2530 综合实验 z-stack 2.4.0-1.4.0\Components\mac\low_level\srf04\mac_backoff_timer.c" ""
+A10=_ "H:\3gbox\zigbee\zigbee综合应用演示代码\复件 cc2530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=11
+SuppressDialog=0

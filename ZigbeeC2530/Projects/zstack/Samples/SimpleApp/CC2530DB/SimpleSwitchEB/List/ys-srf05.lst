@@ -1,0 +1,569 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             09/Jan/2012  21:03:26 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\Source\ys-srf05.c                            #
+#    Command line       =  -f F:\Zigbee节点控制程序\Projects\zstack\Samples\S #
+#                          impleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev #
+#                          .cfg (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f F:\Zigbee节点控制程序\Proje #
+#                          cts\zstack\Samples\SimpleApp\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 F:\Zigbee节点控制程序\Proje #
+#                          cts\zstack\Samples\SimpleApp\Source\ys-srf05.c -D  #
+#                          NWK_AUTO_POLL -D HOLD_AUTO_START -D REFLECTOR -D   #
+#                          POWER_SAVING -D NV_INIT -D xNV_RESTORE -D          #
+#                          xZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D           #
+#                          xMT_SAPI_FUNC -D xMT_SAPI_CB_FUNC -lC              #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\ -lA            #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\Obj\ -e              #
+#                          --require_prototypes --no_code_motion --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I F:\Zigbee节点控制程序\Proj #
+#                          ects\zstack\Samples\SimpleApp\CC2530DB\ -I         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\Source\ -I                       #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\ZMain\TI2530DB\ -I         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\inclu #
+#                          de\ -I F:\Zigbee节点控制程序\Projects\zstack\Sampl #
+#                          es\SimpleApp\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\ -I F:\Zigbee节点控制程序\Projec #
+#                          ts\zstack\Samples\SimpleApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\include\ -I                       #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\high_ #
+#                          level\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\ -I                           #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\single_chip\ -I                         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mt\ -I    #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\osal\incl #
+#                          ude\ -I F:\Zigbee节点控制程序\Projects\zstack\Samp #
+#                          les\SimpleApp\CC2530DB\..\..\..\..\..\Components\o #
+#                          sal\mcu\ccsoc\ -I F:\Zigbee节点控制程序\Projects\z #
+#                          stack\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\services\saddr\ -I                        #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          sdata\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \stack\af\ -I F:\Zigbee节点控制程序\Projects\zstac #
+#                          k\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compon #
+#                          ents\stack\nwk\ -I F:\Zigbee节点控制程序\Projects\ #
+#                          zstack\Samples\SimpleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sapi\ -I                           #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sec #
+#                          \ -I F:\Zigbee节点控制程序\Projects\zstack\Samples #
+#                          \SimpleApp\CC2530DB\..\..\..\..\..\Components\stac #
+#                          k\sys\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \stack\zdo\ -I F:\Zigbee节点控制程序\Projects\zsta #
+#                          ck\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\ -I F:\Zigbee节点控制程序\Projects\zsta #
+#                          ck\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\f8w\ -I "D:\Program Files\IAR           #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "D:\Program Files\IAR Systems\Embedded Workbench   #
+#                          5.4\8051\INC\CLIB\" -Ohz                           #
+#    List file          =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\ys-srf05.lst    #
+#    Object file        =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\Obj\ys-srf05.r51     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\ys-srf05.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe2
+   \   unsigned char volatile __sfr T1CNTL
+   \                     T1CNTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe3
+   \   unsigned char volatile __sfr T1CNTH
+   \                     T1CNTH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          
+      3          #include "ys-srf05.h"
+      4          
+      5          #define   PIN_EN_CFG      (P1SEL &= ~0x08, P1DIR |= 0x08)
+      6          #define   PIN_ECHO_CFG    (P2SEL &= ~0x01, P2DIR &= ~0x01)
+      7          
+      8          #define   WAVE_EN_PIN     P1_3
+      9          #define   WAVE_INPUT_PIN  P2_0
+     10          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          static char clkidx;
+   \                     clkidx:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     12          static unsigned int clk;
+   \                     clk:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     13          static unsigned clks[] = {32000, 16000, 8000, 4000, 2000, 1000, 500, 250};
+   \                     clks:
+   \   000000                DS 16
+   \   000010                REQUIRE `?<Initializer for clks>`
+   \   000010                REQUIRE __INIT_XDATA_I
+     14          
+     15          
+     16          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          static void  Delay_10us(void)
+   \                     Delay_10us:
+     18                {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19                  char i = 10;
+     20                  i--;
+     21                  i--;
+     22                  i--;
+     23                  i--;
+     24                  i--;
+     25                  i--;
+     26                 }
+   \   000000   02....       LJMP    ?BRET
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void srf05Init(void)
+   \                     srf05Init:
+     29          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     30              PIN_EN_CFG;
+   \   000005   53F4F7       ANL     0xf4,#0xf7
+   \   000008   43FE08       ORL     0xfe,#0x8
+     31              PIN_ECHO_CFG;
+   \   00000B   53F5FE       ANL     0xf5,#0xfe
+   \   00000E   53FFFE       ANL     0xff,#0xfe
+     32              
+     33              WAVE_EN_PIN = 0;
+   \   000011   C293         CLR     0x90.3
+     34              
+     35              clkidx = (CLKCONCMD>>3)&0x07;
+   \   000013   E5C6         MOV     A,0xc6
+   \   000015   13           RRC     A
+   \   000016   13           RRC     A
+   \   000017   13           RRC     A
+   \   000018   541F         ANL     A,#0x1f
+   \   00001A   5407         ANL     A,#0x7
+   \   00001C   90....       MOV     DPTR,#clkidx
+   \   00001F   F0           MOVX    @DPTR,A
+     36              
+     37              clk = (clks[clkidx]/128);
+   \   000020   C3           CLR     C
+   \   000021   33           RLC     A
+   \   000022   24..         ADD     A,#(clks & 0xff)
+   \   000024   F582         MOV     DPL,A
+   \   000026   E4           CLR     A
+   \   000027   34..         ADDC    A,#((clks >> 8) & 0xff)
+   \   000029   F583         MOV     DPH,A
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   F5..         MOV     ?V0 + 0,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F5..         MOV     ?V0 + 1,A
+   \   000032   7407         MOV     A,#0x7
+   \   000034   78..         MOV     R0,#?V0 + 0
+   \   000036   12....       LCALL   ?US_SHR
+   \   000039   90....       MOV     DPTR,#clk
+   \   00003C   E5..         MOV     A,?V0 + 0
+   \   00003E   F0           MOVX    @DPTR,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E5..         MOV     A,?V0 + 1
+   \   000042   F0           MOVX    @DPTR,A
+     38          }
+   \   000043   7F02         MOV     R7,#0x2
+   \   000045   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000048                REQUIRE CLKCONCMD
+   \   000048                REQUIRE P1SEL
+   \   000048                REQUIRE P2SEL
+   \   000048                REQUIRE P1DIR
+   \   000048                REQUIRE P2DIR
+   \   000048                REQUIRE _A_P1
+     39          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     40          static void srf05Start(void)
+   \                     srf05Start:
+     41          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     42            WAVE_EN_PIN = 1;
+   \   000004   D293         SETB    0x90.3
+     43            Delay_10us();
+   \   000006                ; Setup parameters for call to function Delay_10us
+   \   000006   12....       LCALL   ??Delay_10us?relay
+     44            Delay_10us();
+   \   000009                ; Setup parameters for call to function Delay_10us
+   \   000009   12....       LCALL   ??Delay_10us?relay
+     45            WAVE_EN_PIN = 0;
+   \   00000C   C293         CLR     0x90.3
+     46          }
+   \   00000E   D083         POP     DPH
+   \   000010   D082         POP     DPL
+   \   000012   02....       LJMP    ?BRET
+   \   000015                REQUIRE _A_P1
+     47          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     48          int srf05Distance(void)
+   \                     srf05Distance:
+     49          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+     50            unsigned int i = 0;
+   \   000005   7E00         MOV     R6,#0x0
+   \   000007   7F00         MOV     R7,#0x0
+     51            float cnt = 0;
+   \   000009   90....       MOV     DPTR,#__Constant_0
+   \   00000C   78..         MOV     R0,#?V0 + 0
+   \   00000E   12....       LCALL   ?L_MOV_X
+     52            int d;
+     53            
+     54            
+     55            T1CNTL = 0;
+   \   000011   75E200       MOV     0xe2,#0x0
+     56            srf05Start();
+   \   000014                ; Setup parameters for call to function srf05Start
+   \   000014   12....       LCALL   ??srf05Start?relay
+     57            while ((0 == WAVE_INPUT_PIN) && ++i);
+   \                     ??srf05Distance_0:
+   \   000017   A2A0         MOV     C,0xa0.0
+   \   000019   4016         JC      ??srf05Distance_1
+   \   00001B   7401         MOV     A,#0x1
+   \   00001D   2E           ADD     A,R6
+   \   00001E   F8           MOV     R0,A
+   \   00001F   7400         MOV     A,#0x0
+   \   000021   3F           ADDC    A,R7
+   \   000022   F9           MOV     R1,A
+   \   000023   E8           MOV     A,R0
+   \   000024   FE           MOV     R6,A
+   \   000025   E9           MOV     A,R1
+   \   000026   FF           MOV     R7,A
+   \   000027   7400         MOV     A,#0x0
+   \   000029   68           XRL     A,R0
+   \   00002A   7003         JNZ     ??srf05Distance_2
+   \   00002C   7400         MOV     A,#0x0
+   \   00002E   69           XRL     A,R1
+   \                     ??srf05Distance_2:
+   \   00002F   70E6         JNZ     ??srf05Distance_0
+     58            if (i == 0) return -1;
+   \                     ??srf05Distance_1:
+   \   000031   7400         MOV     A,#0x0
+   \   000033   6E           XRL     A,R6
+   \   000034   7003         JNZ     ??srf05Distance_3
+   \   000036   7400         MOV     A,#0x0
+   \   000038   6F           XRL     A,R7
+   \                     ??srf05Distance_3:
+   \   000039   7007         JNZ     ??srf05Distance_4
+   \   00003B   7AFF         MOV     R2,#-0x1
+   \   00003D   7BFF         MOV     R3,#-0x1
+   \   00003F   02....       LJMP    ??srf05Distance_5 & 0xFFFF
+     59            T1CTL = 0x0D; //128div
+   \                     ??srf05Distance_4:
+   \   000042   75E40D       MOV     0xe4,#0xd
+     60            i = 0;
+   \   000045   7E00         MOV     R6,#0x0
+   \   000047   7F00         MOV     R7,#0x0
+     61            while (WAVE_INPUT_PIN && ++i);
+   \                     ??srf05Distance_6:
+   \   000049   A2A0         MOV     C,0xa0.0
+   \   00004B   5016         JNC     ??srf05Distance_7
+   \   00004D   7401         MOV     A,#0x1
+   \   00004F   2E           ADD     A,R6
+   \   000050   F8           MOV     R0,A
+   \   000051   7400         MOV     A,#0x0
+   \   000053   3F           ADDC    A,R7
+   \   000054   F9           MOV     R1,A
+   \   000055   E8           MOV     A,R0
+   \   000056   FE           MOV     R6,A
+   \   000057   E9           MOV     A,R1
+   \   000058   FF           MOV     R7,A
+   \   000059   7400         MOV     A,#0x0
+   \   00005B   68           XRL     A,R0
+   \   00005C   7003         JNZ     ??srf05Distance_8
+   \   00005E   7400         MOV     A,#0x0
+   \   000060   69           XRL     A,R1
+   \                     ??srf05Distance_8:
+   \   000061   70E6         JNZ     ??srf05Distance_6
+     62            T1CTL = 0x00;
+   \                     ??srf05Distance_7:
+   \   000063   75E400       MOV     0xe4,#0x0
+     63            if (i == 0) return -1;
+   \   000066   7400         MOV     A,#0x0
+   \   000068   6E           XRL     A,R6
+   \   000069   7003         JNZ     ??srf05Distance_9
+   \   00006B   7400         MOV     A,#0x0
+   \   00006D   6F           XRL     A,R7
+   \                     ??srf05Distance_9:
+   \   00006E   7006         JNZ     ??srf05Distance_10
+   \   000070   7AFF         MOV     R2,#-0x1
+   \   000072   7BFF         MOV     R3,#-0x1
+   \   000074   8072         SJMP    ??srf05Distance_5
+     64            
+     65            cnt = (T1CNTH<<8) | (T1CNTL);
+                                               ^
+Warning[Pa082]: undefined behavior: the order of volatile accesses is
+          undefined in this statement
+   \                     ??srf05Distance_10:
+   \   000076   E5E3         MOV     A,0xe3
+   \   000078   F8           MOV     R0,A
+   \   000079   E4           CLR     A
+   \   00007A   C8           XCH     A,R0
+   \   00007B   F9           MOV     R1,A
+   \   00007C   E5E2         MOV     A,0xe2
+   \   00007E   75..00       MOV     ?V0 + 1,#0x0
+   \   000081   48           ORL     A,R0
+   \   000082   F5..         MOV     ?V0 + 0,A
+   \   000084   E5..         MOV     A,?V0 + 1
+   \   000086   49           ORL     A,R1
+   \   000087   F5..         MOV     ?V0 + 1,A
+   \   000089   E5..         MOV     A,?V0 + 1
+   \   00008B   33           RLC     A
+   \   00008C   95E0         SUBB    A,0xE0 /* A   */
+   \   00008E   F5..         MOV     ?V0 + 2,A
+   \   000090   F5..         MOV     ?V0 + 3,A
+   \   000092   78..         MOV     R0,#?V0 + 0
+   \   000094   12....       LCALL   ?L_TO_FLT
+   \   000097   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00009A   85....       MOV     ?V0 + 5,?V0 + 1
+   \   00009D   85....       MOV     ?V0 + 6,?V0 + 2
+   \   0000A0   85....       MOV     ?V0 + 7,?V0 + 3
+     66            d = (int)((cnt) / clk * 17);
+   \   0000A3   85....       MOV     ?V0 + 0,?V0 + 4
+   \   0000A6   85....       MOV     ?V0 + 1,?V0 + 5
+   \   0000A9   85....       MOV     ?V0 + 2,?V0 + 6
+   \   0000AC   85....       MOV     ?V0 + 3,?V0 + 7
+   \   0000AF   90....       MOV     DPTR,#clk
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   F5..         MOV     ?V0 + 8,A
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   E0           MOVX    A,@DPTR
+   \   0000B7   F5..         MOV     ?V0 + 9,A
+   \   0000B9   E4           CLR     A
+   \   0000BA   F5..         MOV     ?V0 + 10,A
+   \   0000BC   F5..         MOV     ?V0 + 11,A
+   \   0000BE   78..         MOV     R0,#?V0 + 8
+   \   0000C0   12....       LCALL   ?UL_TO_FLT
+   \   0000C3   78..         MOV     R0,#?V0 + 0
+   \   0000C5   79..         MOV     R1,#?V0 + 8
+   \   0000C7   12....       LCALL   ?FLT_DIV
+   \   0000CA   90....       MOV     DPTR,#__Constant_41880000
+   \   0000CD   78..         MOV     R0,#?V0 + 8
+   \   0000CF   12....       LCALL   ?L_MOV_X
+   \   0000D2   78..         MOV     R0,#?V0 + 0
+   \   0000D4   79..         MOV     R1,#?V0 + 8
+   \   0000D6   12....       LCALL   ?FLT_MUL
+   \   0000D9   78..         MOV     R0,#?V0 + 0
+   \   0000DB   12....       LCALL   ?FLT_TO_L
+   \   0000DE   85....       MOV     ?V0 + 12,?V0 + 0
+   \   0000E1   85....       MOV     ?V0 + 13,?V0 + 1
+     67            
+     68            return d;
+   \   0000E4   AA..         MOV     R2,?V0 + 12
+   \   0000E6   AB..         MOV     R3,?V0 + 13
+   \                     ??srf05Distance_5:
+   \   0000E8   7F0E         MOV     R7,#0xe
+   \   0000EA   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000ED                REQUIRE _A_P2
+   \   0000ED                REQUIRE T1CNTL
+   \   0000ED                REQUIRE T1CNTH
+   \   0000ED                REQUIRE T1CTL
+     69          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for clks>`:
+   \   000000   007D803E     DW 32000, 16000, 8000, 4000, 2000, 1000, 500, 250
+   \            401FA00F
+   \            D007E803
+   \            F401FA00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_41880000:
+   \   000000   00008841     DD 41880000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??srf05Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    srf05Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??srf05Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    srf05Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??srf05Distance?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    srf05Distance
+     70          
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     Delay_10us          0      0      0
+     srf05Distance       0      0     22
+       -> srf05Start     0      0     44
+     srf05Init           0      0     10
+     srf05Start          2      0     22
+       -> Delay_10us     4      0      0
+       -> Delay_10us     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     _A_P1                      1
+     _A_P2                      1
+     CLKCONCMD                  1
+     T1CNTL                     1
+     T1CNTH                     1
+     T1CTL                      1
+     P1SEL                      1
+     P2SEL                      1
+     P1DIR                      1
+     P2DIR                      1
+     clkidx                     1
+     clk                        2
+     clks                      16
+     Delay_10us                 3
+     srf05Init                 72
+     srf05Start                21
+     srf05Distance            237
+     ?<Initializer for clks>   16
+     __Constant_0               4
+     __Constant_41880000        4
+     ??Delay_10us?relay         6
+     ??srf05Init?relay          6
+     ??srf05Start?relay         6
+     ??srf05Distance?relay      6
+
+ 
+ 333 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+  10 bytes in segment SFR_AN
+  16 bytes in segment XDATA_I
+  16 bytes in segment XDATA_ID
+   8 bytes in segment XDATA_ROM_C
+   3 bytes in segment XDATA_Z
+ 
+ 373 bytes of CODE  memory
+   0 bytes of CONST memory (+  8 bytes shared)
+   0 bytes of DATA  memory (+ 10 bytes shared)
+  19 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

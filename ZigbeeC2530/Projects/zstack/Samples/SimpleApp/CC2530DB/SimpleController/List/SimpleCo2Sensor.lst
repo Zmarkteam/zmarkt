@@ -1,0 +1,603 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Aug/2011  09:36:20 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack     #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\Sour #
+#                          ce\SimpleCo2Sensor.c                               #
+#    Command line       =  -f "H:\3gbox\zigbee\cc2530\cc2530 综合实验         #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "H:\3gbox\zigbee\cc2530\cc2530 综合实验         #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg #
+#                          " (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0    #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "H:\3gbox\zigbee\cc2530\cc2 #
+#                          530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\S #
+#                          amples\SimpleApp\Source\SimpleCo2Sensor.c" -D      #
+#                          HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR  #
+#                          -D NV_INIT -D xNV_RESTORE -D ZTOOL_P1 -D MT_TASK   #
+#                          -D MT_SYS_FUNC -D xMT_SAPI_FUNC -D                 #
+#                          xMT_SAPI_CB_FUNC -lC "H:\3gbox\zigbee\cc2530\cc253 #
+#                          0 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Sam #
+#                          ples\SimpleApp\CC2530DB\SimpleController\List\"    #
+#                          -lA "H:\3gbox\zigbee\cc2530\cc2530 综合实验        #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\SimpleController\List\"               #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\SimpleController\Obj\" -e                     #
+#                          --require_prototypes --no_code_motion --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "H:\3gbox\zigbee\cc2530\cc #
+#                          2530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\ #
+#                          Samples\SimpleApp\CC2530DB\" -I                    #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\..\Source\" -I "H:\3gbox\zigbee\cc2530\cc2530 #
+#                           综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Samp #
+#                          les\SimpleApp\CC2530DB\..\..\..\ZMain\TI2530DB\"   #
+#                          -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验         #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验      #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "H:\3gbox\zigbee\cc2530\cc2530       #
+#                          综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Sampl #
+#                          es\SimpleApp\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\include\" -I "H:\3gbox\zigbee\cc2530\cc2530      #
+#                          综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Sampl #
+#                          es\SimpleApp\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "H:\3gbox\zigbee\cc2530\cc2530   #
+#                          综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Sampl #
+#                          es\SimpleApp\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\" -I "H:\3gbox\zigbee\cc2530\cc2 #
+#                          530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\S #
+#                          amples\SimpleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\single_chip\" -I             #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\..\..\..\..\..\Components\mt\" -I             #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\" -I   #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\mcu\ccsoc\"    #
+#                          -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验         #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sa #
+#                          ddr\" -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验   #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\services\sd #
+#                          ata\" -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验   #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\af\"  #
+#                          -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验         #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\nwk\" #
+#                           -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验        #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sapi\ #
+#                          " -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验       #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sec\" #
+#                           -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验        #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验        #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "H:\3gbox\zigbee\cc2530\cc2530 综合实验        #
+#                          z-stack 2.4.0-1.4.0\Projects\zstack\Samples\Simple #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack    #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\..\..\..\..\..\Components\zmac\f8w\" -I       #
+#                          "D:\Program Files\IAR Systems\Embedded Workbench   #
+#                          5.4\8051\INC\" -I "D:\Program Files\IAR            #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohz                                               #
+#    List file          =  H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack     #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\SimpleController\List\SimpleCo2Sensor.lst     #
+#    Object file        =  H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack     #
+#                          2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\CC25 #
+#                          30DB\SimpleController\Obj\SimpleCo2Sensor.r51      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+H:\3gbox\zigbee\cc2530\cc2530 综合实验 z-stack 2.4.0-1.4.0\Projects\zstack\Samples\SimpleApp\Source\SimpleCo2Sensor.c
+      1          
+      2          /**************************************************************************************************
+      3            Filename:       SimpleSwitch.c
+      4            Revised:        $Date: 2007-10-25 17:15:48 -0700 (Thu, 25 Oct 2007)
+      5            Revision:       $Revision: 15793 $
+      6          
+      7            Description:    Sample application for a simple light switch utilizing the Simple API.
+      8          
+      9          
+     10            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com. 
+     39          **************************************************************************************************/
+     40          
+     41          /******************************************************************************
+     42           * INCLUDES
+     43           */
+     44          
+     45          #include "ZComDef.h"
+     46          #include "OSAL.h"
+     47          #include "sapi.h"
+     48          #include "hal_key.h"
+     49          #include "hal_led.h"
+     50          
+     51          #include "SimpleApp.h"
+     52          
+     53          /*********************************************************************
+     54           * CONSTANTS
+     55           */
+     56          
+     57          // Application States
+     58          #define APP_INIT                           0    // Initial state
+     59          #define APP_START                          1    // Device has started/joined network
+     60          
+     61          // Application osal event identifiers
+     62          #define MY_START_EVT                0x0001
+     63          
+     64          #define My_SENSOR_CHECK             0x0002
+     65          
+     66          /*********************************************************************
+     67           * TYPEDEFS
+     68           */
+     69          
+     70          /*********************************************************************
+     71           * LOCAL VARIABLES
+     72           */
+     73          static uint8 myAppState = APP_INIT;
+     74          static uint8 myStartRetryDelay = 10;
+     75          
+     76          static uint8 mySenserCheckDelay = 200;
+     77          
+     78          
+     79          
+     80          
+     81          static uint8 sEnable = 0x01; 
+     82          static uint8 sSensorData = 0;
+     83          
+     84          
+     85          /*********************************************************************
+     86           * GLOBAL VARIABLES
+     87           */
+     88          
+     89          // Inputs and Outputs for Switch device
+     90          #define NUM_IN_CMD_SWITCH                 2
+     91          #define NUM_OUT_CMD_SWITCH                2
+     92          
+     93          
+     94          const cId_t zb_InCmdList[NUM_IN_CMD_SWITCH] =
+     95          {
+     96            ID_CMD_READ_REQ,
+     97            ID_CMD_WRITE_REQ,
+     98          };
+     99          const cId_t zb_OutCmdList[NUM_OUT_CMD_SWITCH] =
+    100          {
+    101              ID_CMD_READ_RES,
+    102              ID_CMD_WRITE_RES,
+    103          };
+    104          
+    105          
+    106          // Define SimpleDescriptor for Switch device
+    107          const SimpleDescriptionFormat_t zb_SimpleDesc =
+    108          {
+    109            MY_ENDPOINT_ID,             //  Endpoint
+    110            MY_PROFILE_ID,              //  Profile ID
+    111            DEV_ID_SWITCH,              //  Device ID
+    112            DEVICE_VERSION_SWITCH,      //  Device Version
+    113            0,                          //  Reserved
+    114            NUM_IN_CMD_SWITCH,          //  Number of Input Commands
+    115            (cId_t *) zb_InCmdList,      //  Input Command List
+    116            NUM_OUT_CMD_SWITCH,         //  Number of Output Commands
+    117            (cId_t *) zb_OutCmdList               //  Output Command List
+    118          };
+    119          
+    120          
+    121          /*********************************************************************/
+    122          static int paramWrite(uint16 pid, byte *dat);
+    123          static int paramRead(uint16 pid, byte *dat);
+    124          
+    125          void zb_HanderMsg(osal_event_hdr_t *msg);
+    126          
+    127          /*****************************************************************************
+    128           * @fn          zb_HandleOsalEvent
+    129           *
+    130           * @brief       The zb_HandleOsalEvent function is called by the operating
+    131           *              system when a task event is set
+    132           *
+    133           * @param       event - Bitmask containing the events that have been set
+    134           *
+    135           * @return      none
+    136           */
+    137          void zb_HandleOsalEvent( uint16 event )
+    138          {
+    139             if (event & ZB_ENTRY_EVENT) {
+    140                  uint8 startOptions;
+    141                  uint8 logicalType;
+    142            
+    143                  zb_ReadConfiguration( ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType );
+    144                  if ( logicalType != ZG_DEVICETYPE_ENDDEVICE )
+    145                  {
+    146                    logicalType = ZG_DEVICETYPE_ENDDEVICE;
+    147                    zb_WriteConfiguration(ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType);
+    148                  }
+    149          
+    150                  // Do more configuration if necessary and then restart device with auto-start bit set
+    151                  // write endpoint to simple desc...dont pass it in start req..then reset
+    152                  zb_ReadConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+    153                  if (startOptions != ZCD_STARTOPT_AUTO_START) {
+    154                    startOptions = ZCD_STARTOPT_AUTO_START;
+    155                    zb_WriteConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+    156                  } 
+    157            }
+    158            if ( event & MY_START_EVT )
+    159            {
+    160              zb_StartRequest();
+    161            }
+    162            
+    163            if (event & My_SENSOR_CHECK) {
+    164           
+    165              if (HalKeyRead() & HAL_KEY_DOWN) {
+    166                if (sSensorData == 0) {
+    167                  sSensorData = 1;
+    168                    HalLedSet( HAL_LED_1, HAL_LED_MODE_ON );
+    169                    byte dat[4];
+    170                    dat[0] = 0x05;
+    171                    dat[1] = 0x02;
+    172                    dat[2] = sSensorData;
+    173                    zb_SendDataRequest( 0, ID_CMD_REPORT, 3, dat, 0, AF_ACK_REQUEST, 0 );
+    174                }
+    175              } else if (sSensorData != 0) {
+    176                  sSensorData = 0;
+    177                    HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+    178                    byte dat[4];
+    179                    dat[0] = 0x05;
+    180                    dat[1] = 0x02;
+    181                    dat[2] = sSensorData;
+    182                    zb_SendDataRequest( 0, ID_CMD_REPORT, 3, dat, 0, AF_ACK_REQUEST, 0 );
+    183              }
+    184              osal_start_timerEx( sapi_TaskID, My_SENSOR_CHECK, mySenserCheckDelay );
+    185            }
+    186          }
+    187          /*********************************************************************
+    188           * @fn      zb_HandleKeys
+    189           *
+    190           * @brief   Handles all key events for this device.
+    191           *
+    192           * @param   shift - true if in shift/alt.
+    193           * @param   keys - bit field for key events. Valid entries:
+    194           *                 EVAL_SW4
+    195           *                 EVAL_SW3
+    196           *                 EVAL_SW2
+    197           *                 EVAL_SW1
+    198           *
+    199           * @return  none
+    200           */
+    201          void zb_HandleKeys( uint8 shift, uint8 keys )
+    202          {
+    203          
+    204          }
+    205          /******************************************************************************
+    206           * @fn          zb_StartConfirm
+    207           *
+    208           * @brief       The zb_StartConfirm callback is called by the ZigBee stack
+    209           *              after a start request operation completes
+    210           *
+    211           * @param       status - The status of the start operation.  Status of
+    212           *                       ZB_SUCCESS indicates the start operation completed
+    213           *                       successfully.  Else the status is an error code.
+    214           *
+    215           * @return      none
+    216           */
+    217          void zb_StartConfirm( uint8 status )
+    218          {
+    219            // If the device sucessfully started, change state to running
+    220            if ( status == ZB_SUCCESS )
+    221            {
+    222              myAppState = APP_START;
+    223              if (sEnable != 0) {
+    224                osal_start_timerEx( sapi_TaskID, My_SENSOR_CHECK, mySenserCheckDelay );
+    225              }
+    226            }
+    227            else
+    228            {
+    229              // Try again later with a delay
+    230              osal_start_timerEx( sapi_TaskID, MY_START_EVT, myStartRetryDelay );
+    231            }
+    232          }
+    233          
+    234          /******************************************************************************
+    235           * @fn          zb_SendDataConfirm
+    236           *
+    237           * @brief       The zb_SendDataConfirm callback function is called by the
+    238           *              ZigBee after a send data operation completes
+    239           *
+    240           * @param       handle - The handle identifying the data transmission.
+    241           *              status - The status of the operation.
+    242           *
+    243           * @return      none
+    244           */
+    245          void zb_SendDataConfirm( uint8 handle, uint8 status )
+    246          {
+    247          }
+    248          
+    249          /******************************************************************************
+    250           * @fn          zb_BindConfirm
+    251           *
+    252           * @brief       The zb_BindConfirm callback is called by the ZigBee stack
+    253           *              after a bind operation completes.
+    254           *
+    255           * @param       commandId - The command ID of the binding being confirmed.
+    256           *              status - The status of the bind operation.
+    257           *
+    258           * @return      none
+    259           */
+    260          void zb_BindConfirm( uint16 commandId, uint8 status )
+    261          {
+    262          
+    263            if ( ( status == ZB_SUCCESS ) && ( myAppState == APP_START ) )
+    264            {
+    265            }
+    266          }
+    267          /******************************************************************************
+    268           * @fn          zb_AllowBindConfirm
+    269           *
+    270           * @brief       Indicates when another device attempted to bind to this device
+    271           *
+    272           * @param
+    273           *
+    274           * @return      none
+    275           */
+    276          void zb_AllowBindConfirm( uint16 source )
+    277          {
+    278          
+    279          }
+    280          /******************************************************************************
+    281           * @fn          zb_FindDeviceConfirm
+    282           *
+    283           * @brief       The zb_FindDeviceConfirm callback function is called by the
+    284           *              ZigBee stack when a find device operation completes.
+    285           *
+    286           * @param       searchType - The type of search that was performed.
+    287           *              searchKey - Value that the search was executed on.
+    288           *              result - The result of the search.
+    289           *
+    290           * @return      none
+    291           */
+    292          void zb_FindDeviceConfirm( uint8 searchType, uint8 *searchKey, uint8 *result )
+    293          {
+    294          }
+    295          
+    296          void zb_HanderMsg(osal_event_hdr_t *msg)
+    297          {
+    298          }
+    299          /******************************************************************************
+    300           * @fn          zb_ReceiveDataIndication
+    301           *
+    302           * @brief       The zb_ReceiveDataIndication callback function is called
+    303           *              asynchronously by the ZigBee stack to notify the application
+    304           *              when data is received from a peer device.
+    305           *
+    306           * @param       source - The short address of the peer device that sent the data
+    307           *              command - The commandId associated with the data
+    308           *              len - The number of bytes in the pData parameter
+    309           *              pData - The data sent by the peer device
+    310           *
+    311           * @return      none
+    312           */
+    313          void zb_ReceiveDataIndication( uint16 source, uint16 command, uint16 len, uint8 *pData  )
+    314          {
+    315            int i;
+    316            uint16 pid;
+    317            byte dat[64];
+    318            byte rlen = 1;
+    319            int ret;
+    320            
+    321            HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+    322            HalLedSet( HAL_LED_1, HAL_LED_MODE_BLINK ); 
+    323            switch (command) {
+    324            case ID_CMD_WRITE_REQ:
+    325              for (i=0; i<len; i+=2) {
+    326                pid = pData[i]<<8 | pData[i+1];
+    327                ret = paramWrite(pid, pData+2);
+    328                if (ret <= 0) {
+    329                  dat[0] = 1;
+    330                  zb_SendDataRequest( source, ID_CMD_WRITE_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+    331                  return;
+    332                } 
+    333                i += ret;
+    334              }
+    335              dat[0] = 0;
+    336              zb_SendDataRequest( source, ID_CMD_WRITE_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+    337              break;
+    338            case ID_CMD_READ_REQ:
+    339              for (i=0; i<len; i+=2) {
+    340                pid = pData[i]<<8 | pData[i+1];
+    341                dat[rlen++] = pData[i];
+    342                dat[rlen++] = pData[i+1];
+    343                ret = paramRead(pid, dat+rlen);
+    344                if (ret <= 0) {
+    345                  dat[0] = 1;
+    346                  zb_SendDataRequest( source, ID_CMD_READ_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+    347                  return;
+    348                }
+    349                rlen += ret;
+    350              }
+    351              dat[0] = 0;
+    352              zb_SendDataRequest( source, ID_CMD_READ_RES, rlen, dat, 0, AF_ACK_REQUEST, 0 );
+    353              break;
+    354            }
+    355          }
+    356          
+    357          
+    358          
+    359          
+    360          /******************************************************************************
+    361           * @fn          myApp_ReadTemperature
+    362           *
+    363           * @brief       Reports temperature sensor reading
+    364           *
+    365           * @param
+    366           *
+    367           * @return
+    368           */
+    369          
+    370          
+    371          static int paramWrite(uint16 pid, byte *dat)
+    372          {
+    373            int len = 0;
+    374            switch (pid) {
+    375            case 0x0501:
+    376              sEnable = dat[0];
+    377              if (sEnable != 0) {
+    378                 osal_start_timerEx( sapi_TaskID, My_SENSOR_CHECK, mySenserCheckDelay );
+    379              } else {
+    380                osal_stop_timerEx( sapi_TaskID, My_SENSOR_CHECK );
+    381              }
+    382              len = 1;
+    383              break;
+    384            }
+    385            return len;
+    386          }
+    387          
+    388          static int paramRead(uint16 pid, byte *dat)
+    389          {
+    390            int len = 0;
+    391            switch (pid) {
+    392            case 0x0001:
+    393              dat[0] = 0x11; dat[1] = 0x33;
+    394              len = 2;
+    395              break;
+    396            case 0x0002:
+    397              dat[0] = 0x22; dat[1] = 0x44;
+    398              len = 2;
+    399              break;
+    400            case 0x0003:
+    401              dat[0] = 0x00; dat[1] = 0x01;
+    402              len = 2;
+    403              break;
+    404            case 0x0004:
+    405              dat[0] = dat[1] = dat[2] = dat[3] = dat[4] = dat[5] = 1;
+    406              len = 6;
+    407              break;
+    408            case 0x0005:
+    409              dat[0] = DEV_ID_SENCO2;
+    410              len = 1;
+    411              break;
+    412            /* -----------  网络参数 ------------------- */  
+    413            case 0x0014: //mac地址
+    414               /*osal_nv_read( ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, pBuf ); rm by liren */
+    415              ZMacGetReq( ZMacExtAddr, dat ); // add by liren
+    416              // Outgoing extended address needs to be reversed
+    417              MT_ReverseBytes( dat, Z_EXTADDR_LEN );
+                     ^
+Error[Pe223]: function "MT_ReverseBytes" declared implicitly
+    418              len = Z_EXTADDR_LEN;
+    419              break;
+    420            case 0x0015:
+    421            {
+    422                uint8 assocCnt = 0;
+    423                uint16 *assocList;
+    424                int i;
+    425          #if defined(RTR_NWK) && !defined( NONWK )
+    426              assocList = AssocMakeList( &assocCnt );
+    427          #else
+    428              assocCnt = 0;
+    429              assocList = NULL;
+    430          #endif
+    431              dat[0] = assocCnt;
+    432              for (i=0; i<assocCnt&&i<16; i++) {
+    433                dat[1+2*i] = HI_UINT16(assocList[i]);
+    434                dat[1+2*i+1] = LO_UINT16(assocList[i]);
+    435              }
+    436              len = 1 + 2 * assocCnt;
+    437              break;
+    438            }
+    439           /* ------------------------------------ */
+    440            case 0x0501:
+    441              dat[0] = sEnable;
+    442              len = 1;
+    443              break;
+    444            case 0x0502:
+    445              dat[0] = sSensorData;
+    446              len = 1;
+    447              break;
+    448            }
+    449            return len;
+    450          }
+    451          
+
+Errors: 1
+Warnings: none

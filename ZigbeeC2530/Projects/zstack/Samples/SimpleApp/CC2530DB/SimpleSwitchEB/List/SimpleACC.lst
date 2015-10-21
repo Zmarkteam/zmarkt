@@ -1,0 +1,958 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             09/Jan/2012  21:04:51 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\Source\SimpleACC.c                           #
+#    Command line       =  -f F:\Zigbee节点控制程序\Projects\zstack\Samples\S #
+#                          impleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev #
+#                          .cfg (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f F:\Zigbee节点控制程序\Proje #
+#                          cts\zstack\Samples\SimpleApp\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 F:\Zigbee节点控制程序\Proje #
+#                          cts\zstack\Samples\SimpleApp\Source\SimpleACC.c    #
+#                          -D NWK_AUTO_POLL -D HOLD_AUTO_START -D REFLECTOR   #
+#                          -D POWER_SAVING -D NV_INIT -D xNV_RESTORE -D       #
+#                          xZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D           #
+#                          xMT_SAPI_FUNC -D xMT_SAPI_CB_FUNC -lC              #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\ -lA            #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\Obj\ -e              #
+#                          --require_prototypes --no_code_motion --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I F:\Zigbee节点控制程序\Proj #
+#                          ects\zstack\Samples\SimpleApp\CC2530DB\ -I         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\Source\ -I                       #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\ZMain\TI2530DB\ -I         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\hal\inclu #
+#                          de\ -I F:\Zigbee节点控制程序\Projects\zstack\Sampl #
+#                          es\SimpleApp\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\ -I F:\Zigbee节点控制程序\Projec #
+#                          ts\zstack\Samples\SimpleApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\include\ -I                       #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\high_ #
+#                          level\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\ -I                           #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\single_chip\ -I                         #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\mt\ -I    #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\osal\incl #
+#                          ude\ -I F:\Zigbee节点控制程序\Projects\zstack\Samp #
+#                          les\SimpleApp\CC2530DB\..\..\..\..\..\Components\o #
+#                          sal\mcu\ccsoc\ -I F:\Zigbee节点控制程序\Projects\z #
+#                          stack\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\services\saddr\ -I                        #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          sdata\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \stack\af\ -I F:\Zigbee节点控制程序\Projects\zstac #
+#                          k\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compon #
+#                          ents\stack\nwk\ -I F:\Zigbee节点控制程序\Projects\ #
+#                          zstack\Samples\SimpleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sapi\ -I                           #
+#                          F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\..\..\..\..\..\Components\stack\sec #
+#                          \ -I F:\Zigbee节点控制程序\Projects\zstack\Samples #
+#                          \SimpleApp\CC2530DB\..\..\..\..\..\Components\stac #
+#                          k\sys\ -I F:\Zigbee节点控制程序\Projects\zstack\Sa #
+#                          mples\SimpleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \stack\zdo\ -I F:\Zigbee节点控制程序\Projects\zsta #
+#                          ck\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\ -I F:\Zigbee节点控制程序\Projects\zsta #
+#                          ck\Samples\SimpleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\f8w\ -I "D:\Program Files\IAR           #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "D:\Program Files\IAR Systems\Embedded Workbench   #
+#                          5.4\8051\INC\CLIB\" -Ohz                           #
+#    List file          =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\List\SimpleACC.lst   #
+#    Object file        =  F:\Zigbee节点控制程序\Projects\zstack\Samples\Simp #
+#                          leApp\CC2530DB\SimpleSwitchEB\Obj\SimpleACC.r51    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c
+      1          /**************************************************************************************************
+      2            Filename:       SimpleSwitch.c
+      3            Revised:        $Date: 2007-10-27 17:16:54 -0700 (Sat, 27 Oct 2007) $
+      4            Revision:       $Revision: 15793 $
+      5          
+      6            Description:    Sample application for a simple light switch utilizing the Simple API.
+      7          
+      8           
+      9            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /******************************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          #include "sapi.h"
+     46          #include "hal_key.h"
+     47          #include "hal_led.h"
+     48          #include "hal_adc.h"
+     49          #include "hal_mcu.h"
+     50          #include "SimpleApp.h"
+     51          //#include "intrins.h"
+     52          
+     53          #include "mt.h"
+     54          
+     55          /*********************************************************************
+     56           * CONSTANTS
+     57           */
+     58          
+     59          // Application States
+     60          #define APP_INIT                           0    // Initial state(初始状态)
+     61          #define APP_START                          1    // Sensor has joined network(传感器已加入网络)
+     62          #define APP_BOUND                          2    // Sensor is bound to collector(传感器也绑定到适配器)
+     63          
+     64          // Application osal event identifiers
+     65          // Bit mask of events ( from 0x0000 to 0x00FF )
+     66          #define MY_START_EVT                0x0001      //自定义的开始事件
+     67          #define MY_REPORT_EVT               0x0002     //自定义的上报事件
+     68          
+     69          //#define IIC_READ  0x1D      //定义读指令
+     70          //#define IIC_WRITE 0x1D      //定义写指令
+     71          #define IIC_SDA                    P0_6 
+     72          #define IIC_SCL                    P0_7
+     73          /*********************************************************************
+     74           * TYPEDEFS
+     75           */
+     76          
+     77          /*********************************************************************
+     78           * LOCAL VARIABLES
+     79           */
+     80          
+     81          static uint8 myAppState = APP_INIT;           //myAppState:自定义的APP状态
+     82          
+     83          static uint16 myStartRetryDelay = 10000;      // milliseconds
+     84          
+     85          static uint16 myCheckCardDelay = 250;         //milliseconds
+     86          
+     87          static uint8 IIC_ACC_ON = 1;                     //RFID的开启和关闭
+     88          static uint8 ack_sign;
+     89          /*********************************************************************
+     90           * GLOBAL VARIABLES
+     91           */
+     92          
+     93          // Inputs and Outputs for Switch device
+     94          #define NUM_IN_CMD_SENSOR                 2       //传感器模式:输入模式
+     95          #define NUM_OUT_CMD_SENSOR                3       //传感器模式:输出模式
+     96          
+     97          
+     98          const cId_t zb_InCmdList[NUM_IN_CMD_SENSOR] =
+     99          {
+    100            ID_CMD_READ_REQ,                               //读中断
+    101            ID_CMD_WRITE_REQ,                              //写中断
+    102          };
+    103          const cId_t zb_OutCmdList[NUM_OUT_CMD_SENSOR] =
+    104          {
+    105              ID_CMD_READ_RES,
+    106              ID_CMD_WRITE_RES,
+    107              ID_CMD_REPORT,
+    108          };
+    109          
+    110          
+    111          
+    112          
+    113          
+    114          // Define SimpleDescriptor for Switch device
+    115          const SimpleDescriptionFormat_t zb_SimpleDesc =
+    116          {
+    117            MY_ENDPOINT_ID,             //  Endpoint
+    118            MY_PROFILE_ID,              //  Profile ID
+    119            DEV_ID_SENSOR,              //  Device ID
+    120            DEVICE_VERSION_SENSOR,      //  Device Version
+    121            0,                          //  Reserved
+    122            NUM_IN_CMD_SENSOR,          //  Number of Input Commands
+    123            (cId_t *) zb_InCmdList,             //  Input Command List
+    124            NUM_OUT_CMD_SENSOR,         //  Number of Output Commands
+    125            (cId_t *) zb_OutCmdList     //  Output Command List
+    126          };
+    127          
+    128          /********************************************************
+    129           *
+    130           */
+    131          void zb_HanderMsg(osal_event_hdr_t *msg);
+    132          
+    133          /*********************************************************************
+    134           * LOCAL FUNCTIONS
+    135           */
+    136          
+    137          
+    138          static int paramWrite(uint16 pid, byte *dat);
+    139          static int paramRead(uint16 pid, byte *dat);
+    140          
+    141          void IIC_DELAY(uint16 dlen);
+    142          void IIC_ACC_INIT(void);
+    143          void IIC_START(void);
+    144          void IIC_STOP(void);
+    145          void IIC_ACK(void);
+    146          void IIC_WRITE_BYTE(uint8 wdata);
+    147          char IIC_READ_BYTE(void);
+    148          void IIC_WRITE(uint8 byte_add,uint8 wdata);
+    149          char IIC_READ(uint8 byte_add);
+    150          void rfid_uart_init(void);
+    151          void  rfid_uart_send(uint8 data);
+    152          
+    153          
+    154          /*****************************************************************************
+    155           * @fn          zb_HandleOsalEvent
+    156           *
+    157           * @brief       The zb_HandleOsalEvent function is called by the operating
+    158           *              system when a task event is set
+    159           *
+    160           * @param       event - Bitmask containing the events that have been set
+    161           *
+    162           * @return      none
+    163           */
+    164          void zb_HandleOsalEvent( uint16 event )
+    165          {
+    166           
+    167             if (event & ZB_ENTRY_EVENT) {
+    168                  uint8 startOptions;
+    169                  uint8 logicalType;
+    170            
+    171                  zb_ReadConfiguration( ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType );
+    172                  if ( logicalType != ZG_DEVICETYPE_ENDDEVICE )
+    173                  //if ( logicalType != ZG_DEVICETYPE_ROUTER )
+    174                  //if ( logicalType != ZG_DEVICETYPE_COORDINATOR )
+    175                  {
+    176                    logicalType = ZG_DEVICETYPE_ENDDEVICE;
+    177                    //logicalType = ZG_DEVICETYPE_ROUTER;
+    178                    //logicalType = ZG_DEVICETYPE_COORDINATOR;
+    179                    zb_WriteConfiguration(ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType);
+    180                  }
+    181          
+    182                  // Do more configuration if necessary and then restart device with auto-start bit set
+    183                  // write endpoint to simple desc...dont pass it in start req..then reset
+    184                  zb_ReadConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+    185                  if (startOptions != ZCD_STARTOPT_AUTO_START) {
+    186                    startOptions = ZCD_STARTOPT_AUTO_START;
+    187                    zb_WriteConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+    188                  } 
+    189                  
+    190                  IIC_ACC_INIT();
+    191                  
+    192                  osal_start_timerEx( sapi_TaskID, MY_REPORT_EVT, myCheckCardDelay );
+    193            }
+    194            
+    195            if ( event & MY_START_EVT )
+    196            {  
+    197              zb_StartRequest();
+    198            }
+    199          
+    200            if (event & MY_REPORT_EVT) {
+    201          
+    202              if (IIC_ACC_ON) {
+    203                
+    204                //myAppState == APP_START;
+    205                HalLedSet( HAL_LED_1, HAL_LED_MODE_ON );
+    206                    if (myAppState == APP_START) {
+    207                      unsigned char dat[6];
+    208                      dat[0] = 0x0a;
+    209                      dat[1] = 0x10;
+    210                      dat[2] = IIC_READ(0x06);
+    211                      dat[3] = IIC_READ(0x07);
+    212                      dat[4] = IIC_READ(0x08);
+    213                      /*0：为要上报数据给地址为0的节点*/
+    214                      /*ID_CMD_REPORT:为命令事件*/
+    215                      /*6：为数据长度*/
+    216                      /*dat:为数据*/
+    217                      /*0, AF_ACK_REQUEST, 0为默认值*/
+    218                     // rfid_uart_send(IIC_READ(0x06));
+    219                     // IIC_DELAY(10);
+    220                     // rfid_uart_send(IIC_READ(0x07));
+    221                     /// IIC_DELAY(10);
+    222                     // rfid_uart_send(IIC_READ(0x08));
+    223                     // IIC_DELAY(10);
+    224                      
+    225                      zb_SendDataRequest(0, ID_CMD_REPORT, 5, dat, 0, AF_ACK_REQUEST, 0 );
+    226                    }
+    227                  }
+    228                  
+    229                 else 
+    230                   HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+    231                  //myCheckCardDelay = 1000;
+    232                 
+    233              //}   
+    234             // myCheckCardDelay = 250;
+    235              osal_start_timerEx( sapi_TaskID, MY_REPORT_EVT, myCheckCardDelay );
+    236          }
+    237            
+    238          
+    239          /*********************************************************************
+    240           * @fn      zb_HandleKeys
+    241           *
+    242           * @brief   Handles all key events for this device.
+    243           *
+    244           * @param   shift - true if in shift/alt.
+    245           * @param   keys - bit field for key events. Valid entries:
+    246           *                 EVAL_SW4
+    247           *                 EVAL_SW3
+    248           *                 EVAL_SW2
+    249           *                 EVAL_SW1
+    250           *
+    251           * @return  none
+    252           */
+    253          void zb_HandleKeys( uint8 shift, uint8 keys )
+    254          {
+                 ^
+Error[Pe065]: expected a ";"
+    255           
+    256          }
+    257          /******************************************************************************
+    258           * @fn          zb_StartConfirm
+    259           *
+    260           * @brief       The zb_StartConfirm callback is called by the ZigBee stack
+    261           *              after a start request operation completes
+    262           *
+    263           * @param       status - The status of the start operation.  Status of
+    264           *                       ZB_SUCCESS indicates the start operation completed
+    265           *                       successfully.  Else the status is an error code.
+    266           *
+    267           * @return      none
+    268           */
+    269          void zb_StartConfirm( uint8 status )
+    270          {
+    271            if ( status == ZB_SUCCESS )
+    272            {
+    273              myAppState = APP_START;
+    274              // Set event to bind to a collector
+    275              //osal_start_timerEx( sapi_TaskID, MY_FIND_COLLECTOR_EVT, myBindRetryDelay );
+    276            }
+    277            else
+    278            {
+    279              // Try joining again later with a delay
+    280              osal_start_timerEx( sapi_TaskID, MY_START_EVT, myStartRetryDelay );
+    281            }
+    282          }
+    283          /******************************************************************************
+    284           * @fn          zb_SendDataConfirm
+    285           *
+    286           * @brief       The zb_SendDataConfirm callback function is called by the
+    287           *              ZigBee after a send data operation completes
+    288           *
+    289           * @param       handle - The handle identifying the data transmission.
+    290           *              status - The status of the operation.
+    291           *
+    292           * @return      none
+    293           */
+    294          void zb_SendDataConfirm( uint8 handle, uint8 status )
+    295          {
+    296            if ( status != ZSuccess )
+    297            {
+    298              // Remove bindings to the existing collector
+    299            }
+    300            else
+    301            {
+    302              // send data ??
+    303            }
+    304          }
+    305          /******************************************************************************
+    306           * @fn          zb_BindConfirm
+    307           *
+    308           * @brief       The zb_BindConfirm callback is called by the ZigBee stack
+    309           *              after a bind operation completes.
+    310           *
+    311           * @param       commandId - The command ID of the binding being confirmed.
+    312           *              status - The status of the bind operation.
+    313           *
+    314           * @return      none
+    315           */
+    316          void zb_BindConfirm( uint16 commandId, uint8 status )
+    317          {
+    318          
+    319          
+    320          }
+    321          /******************************************************************************
+    322           * @fn          zb_AllowBindConfirm
+    323           *
+    324           * @brief       Indicates when another device attempted to bind to this device
+    325           *
+    326           * @param
+    327           *
+    328           * @return      none
+    329           */
+    330          void zb_AllowBindConfirm( uint16 source )
+    331          {
+    332          }
+    333          /******************************************************************************
+    334           * @fn          zb_FindDeviceConfirm
+    335           *
+    336           * @brief       The zb_FindDeviceConfirm callback function is called by the
+    337           *              ZigBee stack when a find device operation completes.
+    338           *
+    339           * @param       searchType - The type of search that was performed.
+    340           *              searchKey - Value that the search was executed on.
+    341           *              result - The result of the search.
+    342           *
+    343           * @return      none
+    344           */
+    345          void zb_FindDeviceConfirm( uint8 searchType, uint8 *searchKey, uint8 *result )
+    346          {
+    347          }
+    348          
+    349          
+    350          void zb_HanderMsg(osal_event_hdr_t *msg)
+    351          {
+    352          }
+    353          
+    354          /******************************************************************************
+    355           * @fn          zb_ReceiveDataIndication
+    356           *
+    357           * @brief       The zb_ReceiveDataIndication callback function is called
+    358           *              asynchronously by the ZigBee stack to notify the application
+    359           *              when data is received from a peer device.
+    360           *
+    361           * @param       source - The short address of the peer device that sent the data
+    362           *              command - The commandId associated with the data
+    363           *              len - The number of bytes in the pData parameter
+    364           *              pData - The data sent by the peer device
+    365           *
+    366           * @return      none
+    367           */
+    368          void zb_ReceiveDataIndication( uint16 source, uint16 command, uint16 len, uint8 *pData  )
+    369          {
+    370            int i;
+    371            uint16 pid;
+    372            byte dat[64];
+    373            byte rlen = 1;
+    374            int ret;
+    375            
+    376            HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+    377            HalLedSet( HAL_LED_1, HAL_LED_MODE_BLINK ); 
+    378            switch (command) {
+    379            case ID_CMD_WRITE_REQ:
+    380              for (i=0; i<len; i+=2) {
+    381                pid = pData[i]<<8 | pData[i+1];
+    382                ret = paramWrite(pid, pData+2);
+    383                if (ret <= 0) {
+    384                  dat[0] = 1;
+    385                  zb_SendDataRequest( source, ID_CMD_WRITE_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+    386                  return;
+    387                } 
+    388                i += ret;
+    389              }
+    390              dat[0] = 0;
+                               ^
+Warning[Pe012]: parsing restarts here after previous syntax error
+    391              zb_SendDataRequest( source, ID_CMD_WRITE_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+                                         ^
+Error[Pe020]: identifier "source" is undefined
+
+      zb_SendDataRequest( source, ID_CMD_WRITE_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+                                                       ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",391  Error[Pe020]: 
+          identifier "dat" is undefined
+    392              break;
+                     ^
+Error[Pe116]: a break statement may only be used within a loop or switch
+    393            case ID_CMD_READ_REQ:
+                   ^
+Error[Pe121]: a case label may only be used within a switch
+    394              for (i=0; i<len; i+=2) {
+                          ^
+Error[Pe020]: identifier "i" is undefined
+
+      for (i=0; i<len; i+=2) {
+                  ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",394  Error[Pe020]: 
+          identifier "len" is undefined
+    395                pid = pData[i]<<8 | pData[i+1];
+                       ^
+Error[Pe020]: identifier "pid" is undefined
+
+        pid = pData[i]<<8 | pData[i+1];
+              ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",395  Error[Pe020]: 
+          identifier "pData" is undefined
+    396                dat[rlen++] = pData[i];
+                           ^
+Error[Pe020]: identifier "rlen" is undefined
+    397                dat[rlen++] = pData[i+1];
+    398                ret = paramRead(pid, dat+rlen);
+                       ^
+Error[Pe020]: identifier "ret" is undefined
+    399                if (ret <= 0) {
+    400                  dat[0] = 1;
+    401                  zb_SendDataRequest( source, ID_CMD_READ_RES, 1, dat, 0, AF_ACK_REQUEST, 0 );
+    402                  return;
+    403                }
+    404                rlen += ret;
+    405              }
+    406              dat[0] = 0;
+    407              zb_SendDataRequest( source, ID_CMD_READ_RES, rlen, dat, 0, AF_ACK_REQUEST, 0 );
+                                                                  ^
+Error[Pe020]: identifier "rlen" is undefined
+    408              break;
+                     ^
+Error[Pe116]: a break statement may only be used within a loop or switch
+    409            }
+    410          }
+                 ^
+Error[Pe169]: expected a declaration
+    411          
+    412          
+    413          /******************************************************************************
+    414           * @fn          
+    415           *
+    416           * @brief       Reports temperature sensor reading
+    417           *
+    418           * @param
+    419           *
+    420           * @return
+    421           */
+    422          
+    423          
+    424          /******************************************************************************
+    425           * @fn          myApp_ReadTemperature
+    426           *
+    427           * @brief       Reports temperature sensor reading
+    428           *
+    429           * @param
+    430           *
+    431           * @return
+    432           */
+    433          
+    434          
+    435          static int paramWrite(uint16 pid, byte *dat)
+    436          {
+    437            int len = 0;
+    438            switch (pid) {
+    439            case 0x0a01:
+    440              IIC_ACC_ON = dat[0];
+    441              len = 1;
+    442              break;
+    443            }
+    444            return len;
+    445          }
+    446          
+    447          static int paramRead(uint16 pid, byte *dat)
+    448          {
+    449            int len = 0;
+    450            switch (pid) {
+    451            case 0x0001:
+    452              dat[0] = 0x11; dat[1] = 0x33;
+    453              len = 2;
+    454              break;
+    455            case 0x0002:
+    456              dat[0] = 0x22; dat[1] = 0x44;
+    457              len = 2;
+    458              break;
+    459            case 0x0003:
+    460              dat[0] = 0x00; dat[1] = 0x01;
+    461              len = 2;
+    462              break;
+    463            case 0x0004:
+    464              dat[0] = dat[1] = dat[2] = dat[3] = dat[4] = dat[5] = 1;
+    465              len = 6;
+    466              break;
+    467            case 0x0005:dat[0] = DEV_ID_ACC;len = 1;break;
+    468              
+    469            /* -----------  网络参数 ------------------- */  
+    470            case 0x0014: //mac地址
+    471               /*osal_nv_read( ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, pBuf ); rm by liren */
+    472              ZMacGetReq( ZMacExtAddr, dat ); // add by liren
+                                                   ^
+Warning[Pe012]: parsing restarts here after previous syntax error
+    473              // Outgoing extended address needs to be reversed
+    474              MT_ReverseBytes( dat, Z_EXTADDR_LEN );
+                                           ^
+Error[Pe040]: expected an identifier
+
+      MT_ReverseBytes( dat, Z_EXTADDR_LEN );
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",474  Warning[Pe077]: 
+          this declaration has no storage class or type specifier
+
+      MT_ReverseBytes( dat, Z_EXTADDR_LEN );
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",474  Error[Pe092]: 
+          identifier-list parameters may only be used in a function definition
+
+      MT_ReverseBytes( dat, Z_EXTADDR_LEN );
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",474  Error[Pe147]: 
+          declaration is incompatible with
+          "void MT_ReverseBytes(unsigned char *, byte)" (declared at line 731
+          of
+          "F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\CC2530DB\..\
+          ..\..\..\..\Components\mt\mt.h")
+    475              len = Z_EXTADDR_LEN;
+                     ^
+Error[Pe077]: this declaration has no storage class or type specifier
+    476              break;
+                     ^
+Error[Pe169]: expected a declaration
+    477            case 0x0015:
+                   ^
+Error[Pe169]: expected a declaration
+    478            {
+    479                uint8 assocCnt = 0;
+    480                uint16 *assocList;
+    481                int i;
+    482          #if defined(RTR_NWK) && !defined( NONWK )
+    483              assocList = AssocMakeList( &assocCnt );
+    484          #else
+    485              assocCnt = 0;
+    486              assocList = NULL;
+    487          #endif
+    488              dat[0] = assocCnt;
+    489              for (i=0; i<assocCnt&&i<16; i++) {
+    490                dat[1+2*i] = HI_UINT16(assocList[i]);
+    491                dat[1+2*i+1] = LO_UINT16(assocList[i]);
+    492              }
+    493              len = 1 + 2 * assocCnt;
+    494              break;
+    495            }
+    496           /* ------------------------------------ */
+    497            case 0x0a01:
+    498              dat[0] = IIC_ACC_ON;
+                                        ^
+Warning[Pe012]: parsing restarts here after previous syntax error
+    499              len = 1;
+                     ^
+Error[Pe077]: this declaration has no storage class or type specifier
+
+      len = 1;
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",499  Error[Pe148]: 
+          variable "len" has already been initialized (at line 475)
+    500              break;
+                     ^
+Error[Pe169]: expected a declaration
+    501            case 0x0a02:  /* 读取加速度传感器X值*/
+                   ^
+Error[Pe169]: expected a declaration
+    502              dat[0] = IIC_READ(0x06);
+    503              dat[1] = IIC_READ(0x07);
+                     ^
+Error[Pe077]: this declaration has no storage class or type specifier
+
+      dat[1] = IIC_READ(0x07);
+               ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",503  Warning[Pe520]: 
+          initialization with "{...}" expected for aggregate object
+
+      dat[1] = IIC_READ(0x07);
+               ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",503  Error[Pe059]: 
+          function call is not allowed in a constant expression
+    504              dat[2] = IIC_READ(0x08);
+                     ^
+Error[Pe077]: this declaration has no storage class or type specifier
+
+      dat[2] = IIC_READ(0x08);
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",504  Error[Pe147]: 
+          declaration is incompatible with "int dat[1]" (declared at line 503)
+
+      dat[2] = IIC_READ(0x08);
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",504  Error[Pe148]: 
+          variable "dat" has already been initialized (at line 503)
+
+      dat[2] = IIC_READ(0x08);
+               ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",504  Warning[Pe520]: 
+          initialization with "{...}" expected for aggregate object
+
+      dat[2] = IIC_READ(0x08);
+               ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",504  Error[Pe059]: 
+          function call is not allowed in a constant expression
+    505              len = 1;
+                     ^
+Error[Pe077]: this declaration has no storage class or type specifier
+
+      len = 1;
+      ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",505  Error[Pe148]: 
+          variable "len" has already been initialized (at line 475)
+    506              break;
+                     ^
+Error[Pe169]: expected a declaration
+    507            case 0x0a10:  /* 主动上报X,Y,Z的值*/
+                   ^
+Error[Pe169]: expected a declaration
+    508              len = 0;
+    509              break;
+                     ^
+Error[Pe169]: expected a declaration
+    510              
+    511            }
+                   ^
+Error[Pe169]: expected a declaration
+    512            return len;
+    513          }
+                 ^
+Error[Pe169]: expected a declaration
+    514          
+    515          
+    516          
+    517          
+    518          
+    519          
+    520          
+    521          //#define RFID_UART 0 //1
+    522          void IIC_DELAY(uint16 dlen)        //5us延时
+    523          {
+    524                  //uint16 j;
+    525          	//for(i = 0; i < 100000; i++)
+    526                  for(dlen=0;dlen<5;dlen--)
+    527                  {
+    528                    asm("nop");asm("nop");asm("nop");asm("nop");
+    529                    asm("nop");asm("nop");asm("nop");asm("nop");
+    530                    asm("nop");asm("nop");asm("nop");asm("nop");
+    531                    asm("nop");asm("nop");asm("nop");asm("nop");
+    532                    asm("nop");asm("nop");asm("nop");asm("nop");
+    533                    asm("nop");asm("nop");asm("nop");asm("nop");
+    534                    asm("nop");asm("nop");asm("nop");asm("nop");
+    535                    asm("nop");asm("nop");asm("nop");asm("nop"); 
+    536                  }
+    537          }
+    538          
+    539          /*UART0通信初始化
+    540          -------------------------------------------------------*/
+    541          void IIC_ACC_INIT(void)
+    542          {
+    543          
+    544             P0SEL = 0x00;        //设置P0为通用IO
+    545             P0DIR = 0x80;        //P0_0为输出
+    546             
+    547           
+    548          }
+    549          /*UART0发送数据
+    550          -------------------------------------------------------*/
+    551          void IIC_START(void)               //函数功能：I2C通信开始
+    552          {
+    553          	IIC_SDA = 1;
+    554              IIC_DELAY(5);
+    555          	IIC_SCL = 1;
+    556              IIC_DELAY(5);
+    557          	IIC_SDA = 0;
+    558          	IIC_DELAY(5);
+    559          	
+    560          }
+    561          
+    562          void IIC_STOP(void)                //函数功能：I2C通信停止
+    563          {
+    564          	IIC_SDA = 0;
+    565          	IIC_DELAY(5);
+    566          	IIC_SCL = 1;
+    567          	IIC_DELAY(5);
+    568          	IIC_SDA = 1;
+    569          	IIC_DELAY(5);
+    570          	
+    571          }
+    572          
+    573          void IIC_ACK(void)                 //函数功能：I2C通信查应答位
+    574          {	
+    575              IIC_SDA=1;
+    576          	IIC_SCL = 1;
+    577          	IIC_DELAY(5);
+    578          	ack_sign = IIC_SDA;
+    579          	IIC_SCL = 0;	   
+    580          }
+    581          
+    582          void IIC_WRITE_BYTE(uint8 wdata)//函数功能：向I2C从机写入一个字节
+    583          {
+    584               uint8 i,temp;
+    585          
+    586          	 temp = wdata;
+    587               for(i=0;i<8;i++)
+    588          	{
+    589          	            IIC_SCL = 0;
+    590          				IIC_DELAY(5);
+    591          				temp = temp&0x80;
+    592          				if(temp == 0x80)
+    593                                          {IIC_SDA=1;}				
+    594          				else
+    595                                          {
+    596          					IIC_SDA = 0;
+    597          					IIC_DELAY(5);
+    598          					IIC_SCL = 1;
+    599          					IIC_DELAY(5);
+    600          					IIC_SCL = 0;
+    601          					IIC_DELAY(5);
+    602          					temp = temp<<1;
+    603                                          }
+    604          			
+    605          	}
+    606          
+    607          }
+    608          char IIC_READ_BYTE(void)			 //函数功能：从I2C从机中读出一个字节
+    609          {
+    610               uint8 i;
+    611          	 char IIC_DATA;
+    612               for(i=0;i<8;i++)
+    613          	{	
+    614          	        IIC_DATA = IIC_DATA<<1;
+    615          		IIC_SDA = 1;
+    616          		IIC_DELAY(5);
+    617          		IIC_SCL = 0;
+    618          		IIC_DELAY(5);
+    619          		IIC_SCL = 1;
+    620          		IIC_DELAY(5);
+    621          		if(IIC_SDA == 1)
+    622                          {IIC_DATA |= 0x01;} 
+    623          	}
+    624          	return IIC_DATA;
+    625          }
+    626          void IIC_WRITE(uint8 byte_add,uint8 wdata)//函数功能：按地址写入一字节数据
+    627          {
+    628                  uint8 T;
+    629          	 T = (0x1D<<1);
+    630          	 IIC_START();
+    631          	 IIC_WRITE_BYTE(T);
+    632          	 IIC_ACK();
+    633          	 IIC_WRITE_BYTE(byte_add);
+    634          	 IIC_ACK();
+    635          	 IIC_WRITE_BYTE(wdata);
+    636          	 IIC_ACK();
+    637          	 IIC_STOP();
+    638          }
+    639          char IIC_READ(uint8 byte_add)	           //函数功能：按地址读出一字节数据
+    640          {
+    641                  uint8 T;
+    642          	 char IIC_DATA;
+    643          	 T = (0x1D<<1);
+    644          	 IIC_START();
+    645          	 IIC_WRITE_BYTE(T);
+    646          	 IIC_ACK();
+    647          	 IIC_WRITE_BYTE(byte_add);
+    648          	 IIC_ACK();
+    649          	 T = ((0x1D<<1)|0x01);
+    650          	 IIC_START();
+    651          	 IIC_WRITE_BYTE(T);
+    652          	 IIC_ACK();
+    653          	 IIC_DATA = IIC_READ_BYTE();
+    654          	 IIC_ACK();
+    655          	 IIC_STOP();
+    656          	 return IIC_DATA;
+    657          }
+    658          
+    659          void rfid_uart_init(void)
+    660          {
+    661          #if 1
+    662             P0SEL |=  0x0C;                  //初始化UART0端口
+    663             PERCFG&= ~0x01;                  //选择UART0为可选位置一
+    664          #else
+    665             PERCFG |= 0x01;
+    666             P1SEL |= 0xc0;
+    667          #endif
+    668             U0UCR = 0;                       //设置停止位与奇偶校验 
+    669             U0CSR = 0xC0;                    //设置为UART模式,而且使能接受器
+    670             
+    671             U0GCR = 11;
+    672             U0BAUD = 216;                    //设置UART0波特率为115200bps
+    673            
+    674          }
+    675          
+    676          void  rfid_uart_send(uint8 data)
+    677          {
+    678            U0DBUF = data;
+    679            while(!UTX0IF);    //等待UART空闲时发送数据
+    680            UTX0IF = 0;
+    681          }
+Warning[Pe012]: parsing restarts here after previous syntax error
+
+  static uint16 myStartRetryDelay = 10000;      // milliseconds
+                ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",83  Warning[Pe177]: 
+          variable "myStartRetryDelay" was declared but never referenced
+
+  static uint8 ack_sign;
+               ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",88  Warning[Pe177]: 
+          variable "ack_sign" was declared but never referenced
+
+  static int paramWrite(uint16 pid, byte *dat);
+             ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",138  Warning[Pe177]: 
+          function "paramWrite" was declared but never referenced
+
+  static int paramRead(uint16 pid, byte *dat);
+             ^
+"F:\Zigbee节点控制程序\Projects\zstack\Samples\SimpleApp\Source\SimpleACC.c",139  Error[Pe114]: 
+          function "paramRead" was referenced but not defined
+
+Errors: 38
+Warnings: 10
