@@ -11842,8 +11842,8 @@
           <state>xPOWER_SAVING</state>
           <state>NV_INIT</state>
           <state>xNV_RESTORE</state>
-          <state>xZTOOL_P1</state>
-          <state>xMT_TASK</state>
+          <state>ZAPP_P1</state>
+          <state>MT_TASK</state>
           <state>xMT_SYS_FUNC</state>
           <state>xMT_SAPI_FUNC</state>
           <state>xMT_SAPI_CB_FUNC</state>
@@ -18366,6 +18366,12 @@
         <configuration>SimpAcc</configuration>
         <configuration>SimpFpm10a</configuration>
       </excluded>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\uart.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\uart.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\ys-srf05.c</name>

@@ -56,6 +56,8 @@
 
 #include "dht11.h"
 
+#include "uart.h"
+
 /*********************************************************************
  * CONSTANTS
  */
@@ -199,15 +201,10 @@ void zb_HandleOsalEvent( uint16 event )
     // Read and report temperature value
     HalLedSet( HAL_LED_1, HAL_LED_MODE_BLINK );
     
-    if(check_dht11_has()){
       pData[0] =  0x07;
       pData[1] =  0x02;
       pData[2] = get_DHT11_DATA(0);
-    } else{
-      pData[0] =  0x07;
-      pData[1] =  0x02;
-      pData[2] = 0x00;
-    }
+      CC2530_DEBUG("hal:DHT11,HUM:%d\n",pData[2]);
     zb_SendDataRequest(0, ID_CMD_REPORT, 3, pData, 0, AF_ACK_REQUEST, 0 );
     osal_start_timerEx( sapi_TaskID, MY_REPORT_TEMP_EVT, myWorkMode*1000 );
   }
