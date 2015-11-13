@@ -474,6 +474,13 @@ st( \
 #else
 #define HAL_UART_DMA  0
 #endif
+#if defined (MT_DUL_UART_PORT)
+#if defined (ZAPP_P1) || defined (ZTOOL_P1)
+#define HAL_UART_ISR  2
+#else
+#define HAL_UART_ISR  1
+#endif
+#endif
 #endif
 
 #ifndef HAL_UART_ISR

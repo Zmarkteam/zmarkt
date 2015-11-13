@@ -124,6 +124,13 @@ void MT_UartInit ()
   /* Start UART */
 #if defined (MT_UART_DEFAULT_PORT)
   HalUARTOpen (MT_UART_DEFAULT_PORT, &uartConfig);
+#if defined (MT_DUL_UART_PORT)
+#if defined (ZTOOL_P1) || defined (ZAPP_P1)
+  HalUARTOpen (HAL_UART_PORT_1, &uartConfig);
+#else 
+  HalUARTOpen (HAL_UART_PORT_0, &uartConfig);
+#endif
+#endif  
 #else
   /* Silence IAR compiler warning */
   (void)uartConfig;

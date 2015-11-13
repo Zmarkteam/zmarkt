@@ -204,7 +204,9 @@ void zb_HandleOsalEvent( uint16 event )
       pData[0] =  0x07;
       pData[1] =  0x02;
       pData[2] = get_DHT11_DATA(0);
-      CC2530_DEBUG("hal:DHT11,HUM:%d\n",pData[2]);
+      CC2530_DEBUG_ISR("ZSTACK-CC2530,HELLO!\n");
+      CC2530_DEBUG_DMA("hal:DHT11,HUM:%d\n",pData[2]);
+      
     zb_SendDataRequest(0, ID_CMD_REPORT, 3, pData, 0, AF_ACK_REQUEST, 0 );
     osal_start_timerEx( sapi_TaskID, MY_REPORT_TEMP_EVT, myWorkMode*1000 );
   }

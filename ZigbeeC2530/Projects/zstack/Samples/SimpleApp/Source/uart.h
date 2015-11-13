@@ -16,7 +16,9 @@
 #include "MT_UART.h"
 
 //UAR
-void CC2530_DEBUG(uint8 *fmt ,...); 
+void CC2530_DEBUG_DMA(uint8 *fmt ,...); 
+void CC2530_DEBUG_ISR(uint8 *fmt ,...);
+
 #define PRINTK(X,...)     CC2530_DEBUG(X,##__VA_ARGS__)
 
 #endif //_UART_H_

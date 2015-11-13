@@ -24,12 +24,12 @@
     <Windows>
       
       
-    <Wnd0>
+    <Wnd1>
         <Tabs>
           
         <Tab><Identity>TabID-13296-7469</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-5351-7605</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>1</SelectedTab></Wnd0><Wnd2>
+      <SelectedTab>1</SelectedTab></Wnd1><Wnd3>
         <Tabs>
           <Tab>
             <Identity>TabID-13208-31968</Identity>
@@ -37,24 +37,24 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>SimpleApp</ExpandedNode><ExpandedNode>SimpleApp/App</ExpandedNode><ExpandedNode>SimpleApp/ZDO</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>SimpleApp</ExpandedNode><ExpandedNode>SimpleApp/App</ExpandedNode><ExpandedNode>SimpleApp/HAL</ExpandedNode><ExpandedNode>SimpleApp/HAL/Target</ExpandedNode><ExpandedNode>SimpleApp/HAL/Target/CC2530EB</ExpandedNode><ExpandedNode>SimpleApp/MT</ExpandedNode><ExpandedNode>SimpleApp/ZDO</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2></Windows>
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\SimpleCoordinator.c</Filename><XPos>0</XPos><YPos>159</YPos><SelStart>6236</SelStart><SelEnd>6299</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\SimpleHumiditySensor.c</Filename><XPos>0</XPos><YPos>189</YPos><SelStart>6810</SelStart><SelEnd>6810</SelEnd></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\SimpleCoordinator.c</Filename><XPos>0</XPos><YPos>159</YPos><SelStart>6236</SelStart><SelEnd>6299</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\SimpleHumiditySensor.c</Filename><XPos>0</XPos><YPos>192</YPos><SelStart>6776</SelStart><SelEnd>6776</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\uart.c</Filename><XPos>0</XPos><YPos>45</YPos><SelStart>1503</SelStart><SelEnd>1503</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>523</SelStart><SelEnd>523</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\hal\target\CC2530EB\hal_board_cfg.h</Filename><XPos>0</XPos><YPos>464</YPos><SelStart>19945</SelStart><SelEnd>20087</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\mt\MT_UART.c</Filename><XPos>0</XPos><YPos>117</YPos><SelStart>5620</SelStart><SelEnd>5620</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-012acea8><key>iaridepm.enu1</key></Toolbar-012acea8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>497</Bottom><Right>365</Right><x>-2</x><y>-2</y><xscreen>516</xscreen><yscreen>421</yscreen><sizeHorzCX>362360</sizeHorzCX><sizeHorzCY>599715</sizeHorzCY><sizeVertCX>257725</sizeVertCX><sizeVertCY>710826</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>160</Bottom><Right>1426</Right><x>-2</x><y>-2</y><xscreen>1428</xscreen><yscreen>162</yscreen><sizeHorzCX>1002809</sizeHorzCX><sizeHorzCY>230769</sizeHorzCY><sizeVertCX>362360</sizeVertCX><sizeVertCY>599715</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-0126cea8><key>iaridepm.enu1</key></Toolbar-0126cea8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>497</Bottom><Right>365</Right><x>-2</x><y>-2</y><xscreen>516</xscreen><yscreen>421</yscreen><sizeHorzCX>362360</sizeHorzCX><sizeHorzCY>599715</sizeHorzCY><sizeVertCX>257725</sizeVertCX><sizeVertCY>710826</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>160</Bottom><Right>1426</Right><x>-2</x><y>-2</y><xscreen>1428</xscreen><yscreen>162</yscreen><sizeHorzCX>1002809</sizeHorzCX><sizeHorzCY>230769</sizeHorzCY><sizeVertCX>362360</sizeVertCX><sizeVertCY>599715</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

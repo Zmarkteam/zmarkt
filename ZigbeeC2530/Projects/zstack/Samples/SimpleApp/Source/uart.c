@@ -22,7 +22,7 @@
 #include "uart.h"
 
 #define DEBUG_ENABLED
-void CC2530_DEBUG(uint8 *fmt ,...)
+void CC2530_DEBUG_DMA(uint8 *fmt ,...)
 {
 #ifdef DEBUG_ENABLED
 	va_list	arg_ptr;
@@ -45,6 +45,39 @@ void CC2530_DEBUG(uint8 *fmt ,...)
 		}
 	}
 	HalUARTWrite(MT_UART_DEFAULT_PORT,LocalText,m);
+#else
+;
+#endif	
+}
+
+
+void CC2530_DEBUG_ISR(uint8 *fmt ,...)
+{
+#if defined (MT_DUL_UART_PORT)
+	va_list	arg_ptr;
+	uint8	LocalText[64];
+	uint8 	cnt;
+	uint8	m;
+	for(cnt=0 ; cnt<64 ; cnt++) 
+	{
+		LocalText[cnt] = 0x00;
+	}
+
+	va_start(arg_ptr, fmt);
+	vsprintf(LocalText, fmt, arg_ptr);
+	va_end(arg_ptr);
+	for(m=0 ; m<64 ; m++) 
+	{
+		if(LocalText[m]==0x00)
+		{
+			break;
+		}
+	}
+#if defined (ZAPP_P1) || defined (ZTOOL_P1)
+	HalUARTWrite(HAL_UART_PORT_1,LocalText,m);
+#else
+        HalUARTWrite(HAL_UART_PORT_0,LocalText,m);  
+#endif
 #else
 ;
 #endif	

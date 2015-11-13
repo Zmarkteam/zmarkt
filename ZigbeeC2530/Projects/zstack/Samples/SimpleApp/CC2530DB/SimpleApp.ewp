@@ -11842,6 +11842,7 @@
           <state>xPOWER_SAVING</state>
           <state>NV_INIT</state>
           <state>xNV_RESTORE</state>
+          <state>MT_DUL_UART_PORT</state>
           <state>ZAPP_P1</state>
           <state>MT_TASK</state>
           <state>xMT_SYS_FUNC</state>
